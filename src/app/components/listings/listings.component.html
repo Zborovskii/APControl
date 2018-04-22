@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Описание</th>
+        <th>Тип</th>
+        <th>Объект</th>
+        <th>Кто выявил</th>
+        <th>Время выявления</th>
+        <th>Время устранения</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listing of listings; let i = index">
+        <td>{{i+1}}</td>
+        <th [routerLink]="['/listing/'+listing.$key]" scope="row" >{{listing.title}}</th>
+        <td>{{listing.type}}</td>
+        <td>{{listing.place}}</td>
+        <td>{{listing.owner}}</td>
+        <td>{{listing.dateOfDetection}}</td>
+        <td>{{listing.dateOfFixing}}</td>
+      </tr>
+    </tbody>
+  </table>

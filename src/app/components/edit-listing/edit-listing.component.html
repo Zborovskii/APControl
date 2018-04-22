@@ -1,0 +1,40 @@
+<a [routerLink]="['/listings']">Back</a>
+<br />
+<h2 class="page-header">Изменить замечание</h2>
+<form (submit)="onEditSubmit()">
+  <div class="form-group">
+    <label>Описание замечания</label>
+    <input class="form-control" type="text" [(ngModel)]="title" name="title" required>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+    <label>Объект</label>
+    <input class="form-control" type="text" [(ngModel)]="place" name="place" required>
+  </div>
+  <div class="form-group col">
+    <label>Кто выявил замечание</label>
+    <input class="form-control" type="text" [(ngModel)]="owner" name="owner" required>
+  </div>
+  <div class="form-group col">
+    <label>Дата выявления</label>
+    <input class="form-control" type="date" [(ngModel)]="dateOfDetection" name="dateOfDetection" required>
+  </div>
+</div>
+  <div class="form-group">
+    <label>Тип</label>
+    <select class="form-control" type="text" [(ngModel)]="type" name="type" required>
+      <option value="Выявлено">Выявлено</option>
+      <option value="Устранено">Устранено</option>
+    </select>
+  </div>
+  <!--
+  <div class="form-group">
+    <input id="image" name="image" [(ngModel)]="image" type="file" >
+  </div>
+-->
+  <div class="form-group">
+    <label>Дата устранения</label>
+    <input class="form-control" type="date" [(ngModel)]="dateOfFixing" name="dateOfFixing">
+  </div>
+  <button type="submit" class="btn btn-success">Отправить</button>
+</form>
