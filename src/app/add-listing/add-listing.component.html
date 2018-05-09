@@ -1,0 +1,45 @@
+<div class="container">
+  <a [routerLink]="['/listings']">Назад</a>
+  <br />
+  <h2 class="page-header">Добавить замечание</h2>
+  <form (submit)="onAddSubmit()">
+    <div class="form-group">
+      <label>Описание замечания</label>
+      <input class="form-control" type="text" [(ngModel)]="title" name="title" placeholder="Опишите замечание" required>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label>Объект</label>
+        <input class="form-control" type="text" [(ngModel)]="place" name="place" required>
+      </div>
+      <div class="form-group col-md-4">
+        <label>Кто выявил замечание</label>
+        <input class="form-control" type="text" name="owner" value ={{this.userService.userName}} disabled>
+      </div>
+      <div class="form-group col-md-4">
+        <label>Дата выявления</label>
+        <input class="form-control" type="date" name="dateOfDetection" value = {{this.dateOfDetection}} disabled>
+      </div>
+    </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="exampleFormControlSelect1">Тип</label>
+      <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="type" name="type" required>
+        <option>Выявлено</option>
+        <option>Устранено</option>
+      </select>
+    </div>
+
+      <div class="form-group col-md-6">
+        <label>Дата устранения</label>
+        <input class="form-control" type="date" [(ngModel)]="dateOfFixing" name="dateOfFixing">
+      </div>
+  </div>
+
+  <div class="form-group">
+    <input id="image" name="image" [(ngModel)]="image" type="file" accept="image/*;capture=camera" >
+  </div>
+
+  <input type="submit" value="отправить" class="btn btn-success">
+  </form>
+</div>

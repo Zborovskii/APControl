@@ -1,0 +1,85 @@
+<div class="container">
+  <h2 class="heading">Регистрация</h2>
+
+  <div class="card">
+    <div class="card-body">
+
+      <form>
+
+        <div class="form-group">
+          <label class="label">Email</label>
+            <input 
+              type="email" name="email"
+              placeholder="Введите свою почту" 
+              [(ngModel)]="email" class="form-control"
+              maxlength="60" required
+            />
+        </div>
+
+        <div class="form-group">
+          <label class="label">Пароль</label>
+            <input 
+              type="password" name="password"
+              placeholder="Введите пароль" 
+              [(ngModel)]="password" class="form-control" 
+              required
+            />
+        </div>
+  
+        <div class="form-group">
+          <label class="label">Табельный номер</label>
+            <input 
+              name="tabNumber"
+              placeholder="Введите табельный номер" 
+              [(ngModel)]="tabNumber" class="form-control"
+              maxlength="12" required
+            />
+        </div>
+
+        <div class="form-group">
+          <label class="label">Фамилия</label>
+            <input 
+              name="lastname"
+              placeholder="Введите фамилию" 
+              [(ngModel)]="lastname" class="form-control"
+              maxlength="12" required
+            />
+        </div>
+
+        <div class="form-group">
+          <label class="label">Имя</label>
+            <input 
+              name="firstname"
+              placeholder="Введите имя" 
+              [(ngModel)]="firstname" class="form-control"
+              maxlength="12" required
+            />
+        </div>
+
+        <div class="form-group">
+          <label class="label">Отчество</label>
+            <input 
+              name="patronymic"
+              placeholder="Введите отчество" 
+              [(ngModel)]="patronymic" class="form-control"
+              maxlength="12" required
+            />
+          </div>
+  
+        <div class="form-group">
+          <label class="label">Филиал</label>
+            <select class="form-control" name="subsidiary" [(ngModel)]="subsidiary" required>
+              <option></option>
+              <option>Арзамасское ЛПУМГ</option>
+              <option>Владимирское ЛПУМГ</option>
+              <option>Волжское ЛПУМГ</option>
+            </select>
+        </div>
+
+        <button type="submit" (click)="signUp()" class="btn btn-primary">Sign Up</button>
+
+      </form>
+    </div>
+  </div>
+    
+</div>
